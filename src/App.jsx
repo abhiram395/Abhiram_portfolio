@@ -103,11 +103,12 @@ CGPA: 8.97.
     setMessages((prev) => [...prev, userMessage]);
 
     const currentQuestion = question;
-    setQuestion("");
+    setQuestion("");  
+    const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
     try {
       const response = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDoEVy1qUojzmYxm1427_jSM31KXtGzQsA",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
         {
           method: "POST",
           headers: {
