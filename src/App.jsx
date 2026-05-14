@@ -10,40 +10,100 @@ export default function App() {
     },
   ]);
 
-  const projects = [
-    {
-      title: "Search Engine",
-      description:
-        "Engineered a scalable search engine using inverted indexing for optimized document retrieval and high-speed querying.",
-      stack: ["C++", "Python", "Indexing", "DSA"],
-      highlights: ["Inverted Indexing", "Fast Retrieval", "Efficient Querying"],
-    },
-    {
-      title: "Task Scheduler Simulator",
-      description:
-        "Designed a process scheduler supporting FIFO, SJF, Priority, and Round Robin scheduling algorithms.",
-      stack: ["C++", "Operating Systems", "Scheduling"],
-      highlights: ["Scheduling Algorithms", "OS Concepts", "Simulation Logic"],
-    },
-    {
-      title: "LRU Cache",
-      description:
-        "Implemented an optimized LRU Cache using HashMap and Doubly Linked List.",
-      stack: ["C++", "HashMap", "System Design"],
-      highlights: [
-        "O(1) Operations",
-        "Efficient Eviction",
-        "Cache Optimization",
-      ],
-    },
-    {
-      title: "Security Audit Toolkit",
-      description:
-        "Developed automated Linux and Windows security auditing scripts.",
-      stack: ["Python", "Bash", "Linux", "Cybersecurity"],
-      highlights: ["Security Analysis", "Automation", "Log Monitoring"],
-    },
-  ];
+const projects = [
+  {
+    title: "AI-Powered Scheduling Analytics Simulator",
+
+    description:
+      "Built an intelligent scheduling analytics simulator implementing FIFO, SJF, Priority, and Round Robin algorithms with Gantt chart visualization, turnaround-time analysis, response-time metrics, and Gemini AI-powered workload insights.",
+
+    stack: [
+      "Python",
+      "Flask",
+      "Gemini API",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+
+    highlights: [
+      "Gantt Chart Visualization",
+      "AI Workload Analysis",
+      "Scheduling Algorithms",
+    ],
+
+    github:
+      "https://github.com/abhiram395/Ai-scheduling-analytics-simulator",
+  },
+
+  {
+    title: "Search Engine",
+
+    description:
+      "Engineered a scalable search engine using inverted indexing and optimized retrieval pipelines for fast low-latency querying.",
+
+    stack: [
+      "C++",
+      "Python",
+      "Indexing Systems",
+      "DSA",
+    ],
+
+    highlights: [
+      "Inverted Indexing",
+      "Fast Retrieval",
+      "Efficient Query Processing",
+    ],
+
+    github:
+      "https://github.com/abhiram395/search-engine",
+  },
+
+  {
+    title: "LRU Cache",
+
+    description:
+      "Implemented an optimized LRU Cache using HashMap and Doubly Linked List supporting constant-time insertion and eviction operations.",
+
+    stack: [
+      "C++",
+      "HashMap",
+      "System Design",
+    ],
+
+    highlights: [
+      "O(1) Operations",
+      "Efficient Eviction",
+      "Cache Optimization",
+    ],
+
+    github:
+      "https://github.com/abhiram395/lru-cache",
+  },
+
+  {
+    title: "Security Audit Toolkit",
+
+    description:
+      "Developed automated Linux and Windows security auditing scripts for log monitoring and system-level security analysis.",
+
+    stack: [
+      "Python",
+      "Bash",
+      "Linux",
+      "Cybersecurity",
+    ],
+
+    highlights: [
+      "Security Analysis",
+      "Automation",
+      "Log Monitoring",
+    ],
+
+    github:
+      "https://github.com/abhiram395/security-audit-toolkit",
+  },
+];
 
   const stats = [
     { label: "DSA Problems Solved", value: "500+" },
@@ -281,63 +341,105 @@ ${currentQuestion}`,
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-4 gap-6 mb-24">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="border border-white/10 rounded-3xl p-6 bg-white/5 backdrop-blur-xl"
+<section className="max-w-7xl mx-auto px-6 py-24">
+
+  <div className="grid md:grid-cols-4 gap-6 mb-24">
+    {stats.map((stat) => (
+      <div
+        key={stat.label}
+        className="border border-white/10 rounded-3xl p-6 bg-white/5 backdrop-blur-xl"
+      >
+        <div className="text-4xl font-bold">{stat.value}</div>
+
+        <div className="text-gray-400 mt-3">
+          {stat.label}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div className="mb-16">
+    <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
+      Projects
+    </p>
+
+    <h2 className="text-4xl font-bold mt-4">
+      Featured Engineering Work
+    </h2>
+  </div>
+
+  <div className="grid lg:grid-cols-2 gap-8">
+
+    {projects.map((project, index) => (
+
+      <div
+        key={index}
+        className="border border-white/10 rounded-3xl p-8 bg-white/5 backdrop-blur-xl hover:border-green-400/30 transition duration-300"
+      >
+
+        <div className="flex items-center justify-between mb-6">
+
+          <h3 className="text-2xl font-semibold">
+            {project.title}
+          </h3>
+
+          <div className="text-sm text-gray-400">
+            0{index + 1}
+          </div>
+
+        </div>
+
+        <p className="text-gray-300 leading-relaxed text-lg mb-6">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-3 mb-6">
+
+          {project.stack.map((tech) => (
+
+            <span
+              key={tech}
+              className="px-4 py-2 rounded-full text-sm border border-white/10 bg-black/30 text-gray-300"
             >
-              <div className="text-4xl font-bold">{stat.value}</div>
-              <div className="text-gray-400 mt-3">{stat.label}</div>
-            </div>
+              {tech}
+            </span>
+
           ))}
+
         </div>
 
-        <div className="mb-16">
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
-            Projects
-          </p>
-          <h2 className="text-4xl font-bold mt-4">Featured Engineering Work</h2>
-        </div>
+        <div className="space-y-3">
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {project.highlights.map((item) => (
+
             <div
-              key={index}
-              className="border border-white/10 rounded-3xl p-8 bg-white/5"
+              key={item}
+              className="text-gray-400 text-sm"
             >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-semibold">{project.title}</h3>
-                <div className="text-sm text-gray-400">0{index + 1}</div>
-              </div>
-
-              <p className="text-gray-300 leading-relaxed text-lg mb-6">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-3 mb-6">
-                {project.stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-4 py-2 rounded-full text-sm border border-white/10 bg-black/30 text-gray-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="space-y-3">
-                {project.highlights.map((item) => (
-                  <div key={item} className="text-gray-400 text-sm">
-                    {item}
-                  </div>
-                ))}
-              </div>
+              • {item}
             </div>
+
           ))}
+
         </div>
-      </section>
+
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-8 px-5 py-3 rounded-2xl border border-white/10 hover:bg-white/10 transition text-sm"
+        >
+          View Project →
+        </a>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</section>
+
       <section className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10">
         <div className="mb-16">
           <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
