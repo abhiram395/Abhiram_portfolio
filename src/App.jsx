@@ -103,7 +103,7 @@ CGPA: 8.97.
     setMessages((prev) => [...prev, userMessage]);
 
     const currentQuestion = question;
-    setQuestion("");  
+    setQuestion("");
     const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
     try {
@@ -131,6 +131,16 @@ ${currentQuestion}`,
         },
       );
 
+      // Handle API errors
+      if (!response.ok) {
+        // 429 = quota exceeded
+        if (response.status === 429) {
+          throw new Error("RATE_LIMIT");
+        }
+
+        throw new Error("API_ERROR");
+      }
+
       const data = await response.json();
 
       console.log(data);
@@ -149,11 +159,18 @@ ${currentQuestion}`,
     } catch (error) {
       console.error(error);
 
+      let errorMessage = "AI assistant temporarily unavailable.";
+
+      if (error.message === "RATE_LIMIT") {
+        errorMessage =
+          "AI assistant is temporarily unavailable due to API usage limits. Please explore my projects, skills, internships, and resume meanwhile.";
+      }
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          text: "Error connecting to AI service.",
+          text: errorMessage,
         },
       ]);
     }
