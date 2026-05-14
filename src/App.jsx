@@ -11,6 +11,7 @@ export default function App() {
   ]);
 
 const projects = [
+
   {
     title: "AI-Powered Scheduling Analytics Simulator",
 
@@ -34,7 +35,12 @@ const projects = [
 
     github:
       "https://github.com/abhiram395/Ai-scheduling-analytics-simulator",
+
+    demo:
+      "https://ai-scheduling-analytics-simulator.onrender.com",
   },
+
+
 
   {
     title: "Search Engine",
@@ -57,7 +63,12 @@ const projects = [
 
     github:
       "https://github.com/abhiram395/search-engine",
+
+    demo:
+      "https://your-search-engine-demo.onrender.com",
   },
+
+
 
   {
     title: "LRU Cache",
@@ -79,7 +90,12 @@ const projects = [
 
     github:
       "https://github.com/abhiram395/lru-cache",
+
+    demo:
+      "https://your-lru-cache-demo.onrender.com",
   },
+
+
 
   {
     title: "Security Audit Toolkit",
@@ -102,7 +118,11 @@ const projects = [
 
     github:
       "https://github.com/abhiram395/security-audit-toolkit",
+
+    demo:
+      "https://your-security-toolkit-demo.onrender.com",
   },
+
 ];
 
   const stats = [
@@ -344,21 +364,30 @@ ${currentQuestion}`,
 <section className="max-w-7xl mx-auto px-6 py-24">
 
   <div className="grid md:grid-cols-4 gap-6 mb-24">
+
     {stats.map((stat) => (
+
       <div
         key={stat.label}
         className="border border-white/10 rounded-3xl p-6 bg-white/5 backdrop-blur-xl"
       >
-        <div className="text-4xl font-bold">{stat.value}</div>
+
+        <div className="text-4xl font-bold">
+          {stat.value}
+        </div>
 
         <div className="text-gray-400 mt-3">
           {stat.label}
         </div>
+
       </div>
+
     ))}
+
   </div>
 
   <div className="mb-16">
+
     <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
       Projects
     </p>
@@ -366,6 +395,7 @@ ${currentQuestion}`,
     <h2 className="text-4xl font-bold mt-4">
       Featured Engineering Work
     </h2>
+
   </div>
 
   <div className="grid lg:grid-cols-2 gap-8">
@@ -374,7 +404,7 @@ ${currentQuestion}`,
 
       <div
         key={index}
-        className="border border-white/10 rounded-3xl p-8 bg-white/5 backdrop-blur-xl hover:border-green-400/30 transition duration-300"
+        className="border border-white/10 rounded-3xl p-8 bg-white/5 backdrop-blur-xl hover:border-green-400/30 hover:shadow-2xl transition duration-300"
       >
 
         <div className="flex items-center justify-between mb-6">
@@ -408,7 +438,7 @@ ${currentQuestion}`,
 
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3 mb-8">
 
           {project.highlights.map((item) => (
 
@@ -423,14 +453,31 @@ ${currentQuestion}`,
 
         </div>
 
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mt-8 px-5 py-3 rounded-2xl border border-white/10 hover:bg-white/10 transition text-sm"
-        >
-          View Project →
-        </a>
+        <div className="flex flex-wrap gap-4">
+
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-5 py-3 rounded-2xl border border-white/10 hover:bg-white/10 transition text-sm"
+          >
+            View Project →
+          </a>
+
+          {project.demo && (
+
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-5 py-3 rounded-2xl bg-green-400 text-black hover:scale-105 transition text-sm font-medium"
+            >
+              Live Demo
+            </a>
+
+          )}
+
+        </div>
 
       </div>
 
@@ -439,6 +486,7 @@ ${currentQuestion}`,
   </div>
 
 </section>
+
 
       <section className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10">
         <div className="mb-16">
