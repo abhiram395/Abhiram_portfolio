@@ -65,7 +65,7 @@ const projects = [
       "https://github.com/abhiram395/search-engine",
 
     demo:
-      "https://your-search-engine-demo.onrender.com",
+      "https://search-project-zpto.onrender.com/",
   },
 
 
