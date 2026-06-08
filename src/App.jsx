@@ -118,9 +118,6 @@ const projects = [
 
     github:
       "https://github.com/abhiram395/security-audit-toolkit",
-
-    // demo:
-    //   "https://your-security-toolkit-demo.onrender.com",
   },
 
 ];
