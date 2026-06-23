@@ -118,6 +118,8 @@ const projects = [
 
     github:
       "https://github.com/abhiram395/security-audit-toolkit",
+
+    demo: null,
   },
 
 ];
@@ -715,12 +717,12 @@ ${currentQuestion}`,
           </div>
         </div>
       )}
+
+      <footer className="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
+        <p>Built with React • Vite • Gemini AI</p>
+
+        <p className="mt-2">© 2026 Abhiram Hosmane</p>
+      </footer>
     </div>
   );
 }
-
-<footer className="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
-  <p>Built with React • Vite • Gemini AI</p>
-
-  <p className="mt-2">© 2026 Abhiram Hosmane</p>
-</footer>;
