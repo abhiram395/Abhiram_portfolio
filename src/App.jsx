@@ -62,10 +62,10 @@ const projects = [
     ],
 
     github:
-      "https://github.com/abhiram395/search-engine",
+      "https://github.com/abhiram395/search-project",
 
     demo:
-      "https://search-project-zpto.onrender.com",
+      "https://search-project-zpto.onrender.com/",
   },
 
 
