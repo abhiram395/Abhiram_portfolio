@@ -92,7 +92,7 @@ const projects = [
       "https://github.com/abhiram395/lru-cache",
 
     demo:
-      "https://your-lru-cache-demo.onrender.com",
+      "https://lru-cache-ivory.vercel.app/",
   },
 
 
